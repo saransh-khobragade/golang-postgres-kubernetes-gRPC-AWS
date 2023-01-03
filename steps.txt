@@ -1,0 +1,62 @@
+Download Docker Desktop
+    https://www.docker.com/products/docker-desktop/
+Download TablePlus
+    https://tableplus.com/
+Golang Migrate
+    brew install golang-migrate
+
+
+docker run --name postgres15.1 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
+docker exec -it postgres15.1 psql -U root
+docker logs postgres15.1
+docker start postgres15.1
+docker stop postgres15.1
+docker ps -a
+docker rm postgres15.1
+docker exec -it postgres15.1 /bin/sh
+
+
+postgres commands
+    docker exec -it postgres15.1 psql -U root
+    select now();
+    \q      exit
+    
+    docker exec -it postgres15.1 /bin/sh
+    createdb --username=root --owner=root simple_bank
+    psql simple_bank
+    \q
+    dropdb simple_bank
+    exit 
+
+    docker exec -it postgres15.1 createdb --username=root --owner=root simple_bank
+    docker exec -it postgres15.1 psql -U root simple_bank
+    \q
+
+linux command history
+    history | grep "docker run"
+
+
+
+make postgres
+make createdb
+migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
+
+    
+brew install sqlc (https://sqlc.dev/ , https://github.com/kyleconroy/sqlc , https://play.sqlc.dev)
+sqlc generate
+make sqlc (generate go code for sql)
+
+https://docs.sqlc.dev/en/latest/howto/select.html
+https://docs.sqlc.dev/en/latest/howto/insert.html
+https://docs.sqlc.dev/en/latest/howto/update.html
+https://docs.sqlc.dev/en/latest/howto/delete.html
+
+
+go mod init github.com/saransh-khobragade/golang-postgres-kubernetes-gRPC
+go mod tidy
+
+https://github.com/lib/pq
+
+https://github.com/stretchr/testify(assertion library)
+
