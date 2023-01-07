@@ -8,8 +8,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
 
-services:
+    services:
       # Label used to access the service container
       postgres:
         # Docker Hub image
@@ -26,11 +30,6 @@ services:
           --health-timeout 5s
           --health-retries 5
 
-jobs:
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
