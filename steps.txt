@@ -7,6 +7,10 @@ Golang Migrate (https://github.com/golang-migrate/migrate/blob/master/cmd/migrat
     $ curl -L https://github.com/golang-migrate/migrate/releases/download/$version/migrate.$platform-amd64.tar.gz | tar xvz
     https://github.com/golang-migrate/migrate/releases
     https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz
+Viper(env variables)
+    https://github.com/spf13/viper
+    go get github.com/spf13/viper
+
 
 docker run --name postgres15.1 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
 docker exec -it postgres15.1 psql -U root
@@ -61,4 +65,13 @@ go mod tidy
 https://github.com/lib/pq
 
 https://github.com/stretchr/testify(assertion library)
+
+
+Curl 
+curl --location --request POST 'http://localhost:8080/accounts' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "owner":"Saransh",
+    "currency":"EUR"
+}'
 
