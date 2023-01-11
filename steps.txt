@@ -10,6 +10,9 @@ Golang Migrate (https://github.com/golang-migrate/migrate/blob/master/cmd/migrat
 Viper(env variables)
     https://github.com/spf13/viper
     go get github.com/spf13/viper
+GoMock
+    https://github.com/golang/mock
+    
 
 
 docker run --name postgres15.1 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
@@ -75,3 +78,7 @@ curl --location --request POST 'http://localhost:8080/accounts' \
     "currency":"EUR"
 }'
 
+
+MockGen
+    mockgen -help
+    mockgen -package mockdb -destination db/mock/store.go github.com/saransh-khobragade/golang-postgres-kubernetes-gRPC/db/sqlc Store
