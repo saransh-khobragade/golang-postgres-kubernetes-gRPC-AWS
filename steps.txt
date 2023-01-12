@@ -82,3 +82,10 @@ curl --location --request POST 'http://localhost:8080/accounts' \
 MockGen
     mockgen -help
     mockgen -package mockdb -destination db/mock/store.go github.com/saransh-khobragade/golang-postgres-kubernetes-gRPC/db/sqlc Store
+
+Alter table migration command
+    migrate create -ext sql -dir db/migration -seq add_users
+
+
+TablePlus
+    manual entry will be saved by cmd+s
