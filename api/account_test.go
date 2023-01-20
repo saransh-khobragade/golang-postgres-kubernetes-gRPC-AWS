@@ -95,7 +95,7 @@ func TestGetAccountAPI(t *testing.T) {
 			store := mockdb.NewMockStore(ctrl) //instance of mockdb
 			tc.buildStubs(store)
 
-			server := NewServer(store)         //start test server with mockdb instance and send request
+			server := newTestServer(t, store)  //start test server with mockdb instance and send request
 			recorder := httptest.NewRecorder() //recorder will record res
 
 			url := fmt.Sprintf("/accounts/%d", tc.accountID)          //creating api end point
