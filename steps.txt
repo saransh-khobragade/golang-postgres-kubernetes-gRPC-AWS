@@ -90,3 +90,7 @@ Alter table migration command
 TablePlus
     manual entry will be saved by cmd+s
     if migration fails change version and dirty flag of schema migration table manually
+
+Docker
+    docker build -t simplebank:latest .
+    
