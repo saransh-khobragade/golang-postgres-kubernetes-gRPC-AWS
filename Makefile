@@ -1,5 +1,8 @@
+golang:
+	docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres15.1:5432/simple_bank?sslmode=disable" simplebank:latest
+
 postgres:
-	docker run --name postgres15.1 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
+	docker run --name postgres15.1 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
 
 removepostgres:
 	docker rm -f postgres15.1
@@ -33,5 +36,11 @@ server:
 
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/saransh-khobragade/golang-postgres-kubernetes-gRPC/db/sqlc Store
+
+buildgolangimage:
+	docker build -t simplebank:latest .
+
+dockernetwork:
+	docker network create bank-network && docker network connect bank-network postgres15.1
 
 .PHONY: postgres createdb dropdb migrateup migratedown migrateup1 migratedown1 sqlc test server mock

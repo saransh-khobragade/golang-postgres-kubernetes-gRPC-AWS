@@ -93,4 +93,13 @@ TablePlus
 
 Docker
     docker build -t simplebank:latest .
+    docker run --name simplebank -p 8080:8080 -e GIN_MODE=release simplebank:latest
+    docker inspect postgres
+    docker network ls
+    docker inspect network bridge
+    docker network create bank-network
+    docker network connect bank-network postgres15.1
+    docker inspect network bank-network
+    docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres15.1:5432/simple_bank?sslmode=disable" simplebank:latest
+
     
