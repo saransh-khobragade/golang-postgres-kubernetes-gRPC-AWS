@@ -31,7 +31,7 @@ func RandomString(n int) string {
 }
 
 // Random owner name
-func RandomOnwer() string {
+func RandomOwner() string {
 	return RandomString(6)
 }
 

@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "b1c5243e-bace-4306-86c5-3bbf4a847308",
+		"name": "simple_bank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"Saransh2\",\n    \"password\":\"secret\",\n    \"full_name\":\"Saransh khobragade\",\n    \"email\":\"saransh2@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"Saransh1\",\n    \"password\":\"secret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "v2.local.6S1GHDFGH8EVim3zGqWO9jdsQbp7TU53PoGHP8dBJQu0HXEe5d4H_9s5tPFyUp6GtJPhCTQdn4tZrDSC4Y-mtOTDHtXH9AsB_LkcKKXOgUWdKxPSGlmIhLVl5c1xbIR_AOYBu1SRa27UGJYGFHOAd3pkA12QJpFW9jdxpBjXL7chqcEekgtSz0JkL4HPg65qNPxK6tN0sd4ZrEIBCIG47KouI06y0HYQ6KfeLQjEXOxR6Tw7sKzlMF1tz68TQ0Eg-6_4TOg42ltRUQ.bnVsbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owner\":\"Saransh\",\n    \"currency\":\"CAD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "v2.local.Csayz_nPRnqTMyvq49BTYYZEj1JuOHXgfqo-TRpV2ycE5GDnFpSODp-tCL90OPnqhkh4JMb8qaAOW962jdbWbcKA6M3vdGYcWZV6sEPDGNj7TpZnP770F8w-Klnd7lSI6i4bM41d0S4WD3lHi3zsogbsZP4e8gjwioavkaewZfYseUO1sxXl68dWutAG8EB2Qu59dix24tQR9qS5lsbG-CkhFun47A7DKNXu0vfleiR9NCNuyN-j3Ek2dPYttfTK7NLDxnttjii8.bnVsbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts?page_id=1&page_size=5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "v2.local.Csayz_nPRnqTMyvq49BTYYZEj1JuOHXgfqo-TRpV2ycE5GDnFpSODp-tCL90OPnqhkh4JMb8qaAOW962jdbWbcKA6M3vdGYcWZV6sEPDGNj7TpZnP770F8w-Klnd7lSI6i4bM41d0S4WD3lHi3zsogbsZP4e8gjwioavkaewZfYseUO1sxXl68dWutAG8EB2Qu59dix24tQR9qS5lsbG-CkhFun47A7DKNXu0vfleiR9NCNuyN-j3Ek2dPYttfTK7NLDxnttjii8.bnVsbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts?page_id=1&page_size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "page_id",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/transfers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "v2.local.Csayz_nPRnqTMyvq49BTYYZEj1JuOHXgfqo-TRpV2ycE5GDnFpSODp-tCL90OPnqhkh4JMb8qaAOW962jdbWbcKA6M3vdGYcWZV6sEPDGNj7TpZnP770F8w-Klnd7lSI6i4bM41d0S4WD3lHi3zsogbsZP4e8gjwioavkaewZfYseUO1sxXl68dWutAG8EB2Qu59dix24tQR9qS5lsbG-CkhFun47A7DKNXu0vfleiR9NCNuyN-j3Ek2dPYttfTK7NLDxnttjii8.bnVsbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from_account_id\":5,\n    \"to_account_id\":1,\n    \"amount\":10,\n    \"currency\":\"EUR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
