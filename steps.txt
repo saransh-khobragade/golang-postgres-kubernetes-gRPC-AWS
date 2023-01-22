@@ -110,3 +110,6 @@ Docker
 shell script
     chmod +x start.sh
 
+
+Amazon github action
+    https://github.com/marketplace/actions/amazon-ecr-login-action-for-github-actions
