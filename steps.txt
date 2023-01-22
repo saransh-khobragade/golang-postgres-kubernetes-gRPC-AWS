@@ -12,6 +12,8 @@ Viper(env variables)
     go get github.com/spf13/viper
 GoMock
     https://github.com/golang/mock
+wait-for(docker depends on wait)
+    https://github.com/eficode/wait-for/releases/tag/v2.2.4
     
 
 
@@ -102,4 +104,9 @@ Docker
     docker inspect network bank-network
     docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres15.1:5432/simple_bank?sslmode=disable" simplebank:latest
 
-    
+    docker-compose up
+    docker-compose down
+
+shell script
+    chmod +x start.sh
+
