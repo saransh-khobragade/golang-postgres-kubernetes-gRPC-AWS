@@ -14,6 +14,10 @@ GoMock
     https://github.com/golang/mock
 wait-for(docker depends on wait)
     https://github.com/eficode/wait-for/releases/tag/v2.2.4
+AWS cli
+    https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+jq
+    brew install jq
     
 
 
@@ -113,3 +117,10 @@ shell script
 
 Amazon github action
     https://github.com/marketplace/actions/amazon-ecr-login-action-for-github-actions
+
+Random string
+    openssl rand -hex 64 | head -c 32
+
+AWS
+    which aws
+    aws --version
