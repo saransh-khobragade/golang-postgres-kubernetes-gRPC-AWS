@@ -31,6 +31,9 @@ sqlc:
 test:
 	go test -v -cover ./...
 
+cleantestcache:
+	go clean -testcache
+
 server:
 	go run main.go
 
