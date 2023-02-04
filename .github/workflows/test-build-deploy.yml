@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  Unit Tests:
+  unitTest:
     name: Unit Tests
     runs-on: ubuntu-latest
 
@@ -53,7 +53,7 @@ jobs:
     - name: Test
       run: make test
 
-  Build And Deploy:
+  buildAndDeployToAws:
     name: Build image
     runs-on: ubuntu-latest
 
