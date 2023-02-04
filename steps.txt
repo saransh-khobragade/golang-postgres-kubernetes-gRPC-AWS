@@ -23,8 +23,12 @@ Kubectl
     brew install kubectl
     https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
     https://kubernetes.io/docs/concepts/services-networking/service/
+    https://storage.googleapis.com/kubernetes-release/release/stable.txt
 k9s
     brew install derailed/k9s/k9s
+Github marketplace
+    https://github.com/marketplace?type=
+    Kubectl tool installer
 
 
 
