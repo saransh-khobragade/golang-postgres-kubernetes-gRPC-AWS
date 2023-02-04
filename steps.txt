@@ -18,7 +18,14 @@ AWS cli
     https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 jq
     brew install jq
-    
+Kubectl
+    https://kubernetes.io/docs/tasks/tools/
+    brew install kubectl
+    https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+    https://kubernetes.io/docs/concepts/services-networking/service/
+k9s
+    brew install derailed/k9s/k9s
+
 
 
 docker run --name postgres15.1 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
@@ -126,3 +133,33 @@ AWS
     aws --version
     aws configure
     aws secretsmanager get-secret-value --secret-id simple_bank
+
+Kubectl
+    kubectl version --client
+    kubectl cluster-info
+    aws eks update-kubeconfig --name simple-bank --region ap-south-1
+    cat ~/.kube/config
+    aws sts get-caller-identity
+    cat ~/.aws/credentials 
+    kubectl get pods
+    export AWS_PROFILE=default
+    kubectl apply -f eks/aws-auth.yaml
+    kubectl cluster-info
+
+    kubectl get service
+    kubectl get pods
+
+    kubectl apply -f eks/deployment.yaml
+    kubectl apply -f eks/service.yaml   
+    nslookup serviceExtrenalIP
+
+k9s
+    :ns enter
+    esc
+    :service
+    :pods
+    :nodes
+    :quit
+    :deployements
+    ctl+d
+
