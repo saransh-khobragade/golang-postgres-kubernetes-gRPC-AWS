@@ -29,7 +29,10 @@ k9s
 Github marketplace
     https://github.com/marketplace?type=
     Kubectl tool installer
-
+evans grpc client
+    https://github.com/ktr0731/evans
+    brew tap ktr0731/evans
+    brew install evans
 
 
 docker run --name postgres15.1 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15.1-alpine
@@ -167,4 +170,28 @@ k9s
     :quit
     :deployements
     ctl+d
+
+gRPC
+    https://grpc.io/docs/protoc-installation/
+    brew install protobuf
+    protoc --version
+    https://grpc.io/docs/languages/go/quickstart/
+    go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+    protoc-gen-go --version
+    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+    protoc-gen-go-grpc --version
+
+    proto import vscode setting
+    "protoc":{
+        "options": [
+            "--proto_path=proto",
+        ]
+    }
+    go mod tidy
+
+evans grpc client
+    evans --host localhost --port 9090 -r repl
+    show service
+    call CreateUser
+    exit
 
